@@ -7,6 +7,7 @@ export class Consulta {
     private _medico: Medico;
 
     constructor(dataConsulta: Date, paciente: Paciente, medico: Medico) {
+        this.verificarDataConsulta(dataConsulta);
         this._dataConsulta = dataConsulta;
         this._paciente = paciente;
         this._medico = medico;
@@ -17,6 +18,7 @@ export class Consulta {
     }
 
     set dataConsulta(dataConsulta: Date){
+        this.verificarDataConsulta(dataConsulta);
         this._dataConsulta = dataConsulta;
     }
 
@@ -34,5 +36,13 @@ export class Consulta {
 
     set medico(medico: Medico){
         this._medico = medico;
+    }
+
+    public verificarDataConsulta(dataConsulta: Date): void{
+        const dataAtual = new Date();
+
+        if(dataAtual.getTime() >= dataConsulta.getTime()){
+            throw new Error("O dia da consulta é inválido.");
+        }
     }
 }
