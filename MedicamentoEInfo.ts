@@ -1,6 +1,6 @@
 import { Medicamento } from "./Medicamento";
 
-export class MedicamentosEInfos {
+export class MedicamentoEInfo {
     private _medicamento: Medicamento;
     private _qtdHorasConsumo: number;
     private _dosagem: string;
