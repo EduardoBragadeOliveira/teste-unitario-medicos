@@ -19,15 +19,15 @@ const medico_lucas = new Medico('Lucas', 321, '555ABC');
 
 describe('Data de consulta', () => {
 
-    test('Erro se a consulta for marcada antes da data atual', () => {
+    test('Erro se a data for anterior ao dia atual no constructor', () => {
         expect(() => new Consulta(dataAnterior, paciente_eduardo, medico_lucas)).toThrow(Error);
     });
 
-    test('Erro se a consulta for marcada na mesma data de hoje', () => {
+    test('Erro se a data for igual ao dia atual no constructor', () => {
         expect(() => new Consulta(dataAtual, paciente_eduardo, medico_lucas)).toThrow(Error);
     });
 
-    test('Erro se a consulta for marcada em uma data futura', () => {
+    test('Não jogar erro e não passar no teste se a data for posterior ao dia atual no constructor', () => {
         expect(() => new Consulta(dataPosterior, paciente_eduardo, medico_lucas)).toThrow(Error);
     });
 });
