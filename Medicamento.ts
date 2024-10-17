@@ -1,3 +1,5 @@
+import { Medico } from "./Medico"
+
 export class Medicamento {
     private _nomeMed: string
     private _qtdmg: number
@@ -20,6 +22,6 @@ export class Medicamento {
 
     constructor(nomeMed: string, qtdmg: number) {
         this._nomeMed = nomeMed
-        this, this._qtdmg = qtdmg
+        this._qtdmg = qtdmg
     }
 }
