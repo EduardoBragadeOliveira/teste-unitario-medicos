@@ -1,4 +1,4 @@
-export class Medicamento{
+export class Medicamento {
     private _nomeMed: string
     private _qtdmg: number
 
@@ -6,20 +6,20 @@ export class Medicamento{
         return this._nomeMed
     }
 
-    set nomeMed(nomeMed: string){
+    set nomeMed(nomeMed: string) {
         this._nomeMed = nomeMed
     }
-   
-     get qtdmg(): number {
+
+    get qtdmg(): number {
         return this._qtdmg
     }
-     set qtdmg(qtdmg: number) {
+    set qtdmg(qtdmg: number) {
         this._qtdmg = qtdmg
     }
-    
 
-    constructor(nomeMed: string, qtdmg: number){
+
+    constructor(nomeMed: string, qtdmg: number) {
         this._nomeMed = nomeMed
-        this,this._qtdmg = qtdmg
+        this, this._qtdmg = qtdmg
     }
 }
