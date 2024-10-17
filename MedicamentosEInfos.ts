@@ -1,4 +1,5 @@
 import { Medicamento } from "./Medicamento";
+import { Medicamentos } from "./Anvisa";
 
 export class MedicamentosEInfos {
     private _medicamento: Medicamento;
@@ -9,6 +10,7 @@ export class MedicamentosEInfos {
         this._medicamento = medicamento;
         this._qtdHorasConsumo = qtdHorasConsumo;
         this._dosagem = dosagem;
+        this.validacaoAnvisa(medicamento.nomeMed)
     }
 
     get medicamento(): Medicamento {
@@ -16,6 +18,7 @@ export class MedicamentosEInfos {
     }
 
     set medicamento(medicamento: Medicamento){
+        this.validacaoAnvisa(medicamento.nomeMed)
         this._medicamento = medicamento;
     }
 
@@ -33,5 +36,13 @@ export class MedicamentosEInfos {
 
     set dosagem(dosagem: string){
         this._dosagem = dosagem;
+    }
+    
+    public validacaoAnvisa = (med: String): void => {
+        if(!Medicamentos.some(
+            (item) => item.nomeMed.toLowerCase() === (med.toLowerCase()) 
+        )){
+            throw new Error("O remédio não está na lista da ANVISA");
+        }
     }
 }
