@@ -33,7 +33,7 @@ const consulta_2 = new Consulta(data2DiasPosterior, paciente_eduardo, medico_luc
 
 const consulta_3 = new Consulta(dataMaisUmMinuto, paciente_eduardo, medico_lucas);
 
-const dipirona = new Medicamento('Dipirona', 1000);
+const dipirona = new Medicamento('Amoxicilina', 1000);
 
 const dipirona_infos = new MedicamentoEInfo(dipirona, 8, '2 comprimidos');
 
